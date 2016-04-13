@@ -23,7 +23,7 @@ Edit it to match your environment.
 Playbooks:
 
 - `deploy.yml` - Run files deployment
-- `migrate.yml` - Run migrations & seeds if you want
+- `migrate.yml` - Run migrations
 - `seed.yml` - Run seeding
 
 ```bash

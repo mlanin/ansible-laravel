@@ -2,18 +2,9 @@
 
 - hosts: laravel
 
-  vars_prompt:
-    - name: seed
-      prompt: "Seed (y/n)"
-      private: no
-      default: n
-
   tasks:
     - name: Migrating DB
       shell: chdir={{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}
         {{ php_path }} artisan migrate --force
       register: migrate_result
       changed_when: "migrate_result.stdout != 'Nothing to migrate.'"
-
-    - include: seed.yml
-      when: seed == 'y'
