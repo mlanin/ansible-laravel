@@ -26,10 +26,9 @@ Edit it to match your environment.
 
 Playbooks:
 
-- `master.yml` - Run all tasks
-- `deploy.yml` - Only files deployment
-- `migrate.yml` - Only migrations & seeds if you want
-- `seed.yml` - Only seeding
+- `deploy.yml` - Run files deployment
+- `migrate.yml` - Run migrations & seeds if you want
+- `seed.yml` - Run seeding
 
 ```bash
 ansible-playbook deploy.yml -i production -u root
