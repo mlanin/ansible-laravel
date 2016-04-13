@@ -2,11 +2,7 @@
 
 #### Prepare
 
-Create hosts file for (all or any):
-
-- production
-- staging
-- develop
+Create hosts file for all your environments from example:
 
 ```bash
 cp hosts.example production
