@@ -23,6 +23,7 @@ Edit it to match your environment.
 Playbooks:
 
 - `deploy.yml` - Run files deployment
+- `rollback.yml` - Rollback deploy
 - `migrate.yml` - Run migrations
 - `seed.yml` - Run seeding
 
