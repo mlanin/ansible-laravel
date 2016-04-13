@@ -1,0 +1,18 @@
+---
+
+- stat: path={{ ansistrano_shared_path.stdout }}/.env
+  register: env_file
+
+- name: Copy .env.example
+  copy:
+    src: "{{ ansistrano_shared_path.stdout }}/.env.example"
+    dest: "{{ ansistrano_release_path.stdout }}/.env"
+    remote_src: True
+  when: env_file.stat.exists == False
+
+- stat: path={{ ansistrano_shared_path.stdout }}/storage
+  register: storage_dir
+
+- name: Copy storage directory
+  command: "cp -r {{ ansistrano_release_path.stdout }}/storage {{ ansistrano_shared_path.stdout }}/storage"
+  when: storage_dir.stat.exists == False

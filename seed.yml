@@ -1,0 +1,8 @@
+---
+
+- hosts: laravel
+
+  tasks:
+    - name: Seeding DB
+      shell: chdir={{ ansistrano_deploy_to }}/{{ ansistrano_current_dir }}
+        {{ php_path }} artisan db:seed --force

@@ -1,0 +1,7 @@
+---
+
+- name: Link storage/public to public/storage
+  file:
+    state: link
+    path: "{{ ansistrano_release_path.stdout }}/public/storage"
+    src: "{{ ansistrano_shared_path.stdout }}/storage/app/public"

@@ -1,0 +1,8 @@
+*.retry
+*.cache
+
+group_vars/laravel.yml
+
+production
+staging
+develop

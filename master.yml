@@ -1,0 +1,7 @@
+---
+
+- hosts: laravel
+
+  include: deploy.yml
+  include: migrate.yml
+  include: seed.yml

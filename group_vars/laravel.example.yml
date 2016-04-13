@@ -1,0 +1,29 @@
+---
+
+ansistrano_deploy_to: /var/www/laravel # Update to your deploy path
+ansistrano_version_dir: releases
+ansistrano_current_dir: current
+ansistrano_shared_paths:
+  - .env
+  - storage
+
+ansistrano_keep_releases: 5
+ansistrano_deploy_via: git
+ansistrano_allow_anonymous_stats: no
+
+ansistrano_git_repo: git@github.com:foo/bar.git # Update to your git repo
+ansistrano_git_branch: master
+
+# Copy shared files and dirs
+ansistrano_before_symlink_shared_tasks_file: "{{ playbook_dir }}/config/before_symlink_shared.yml"
+# Link uploads and run composer install
+ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/config/after_symlink_shared.yml"
+# Chown all and restart queue
+ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/config/after_symlink.yml"
+
+owner: www-data
+group: www-data
+php_path: /usr/bin/php
+composer_path: "{{ ansistrano_deploy_to }}/composer.phar"
+composer_options: '--no-dev --optimize-autoloader --no-interaction'
+composer_self_update: true

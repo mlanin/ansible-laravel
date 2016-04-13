@@ -1,0 +1,4 @@
+---
+
+- include: "{{ playbook_dir }}/config/steps/link_uploads.yml"
+- include: "{{ playbook_dir }}/config/steps/composer.yml"

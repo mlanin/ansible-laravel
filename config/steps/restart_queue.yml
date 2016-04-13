@@ -1,0 +1,5 @@
+---
+
+- name: Restart queue
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ php_path }} artisan queue:restart
