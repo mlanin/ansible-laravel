@@ -9,3 +9,4 @@
 
 - name: Run opcache:reset
   shell: "{{ php_path }} {{ cachetool_path }} opcache:reset {{ cachetool_options }}"
+  ignore_errors: True
