@@ -22,11 +22,11 @@ Edit it to match your environment.
 
 Playbooks:
 
-- `deploy.yml` - Run files deployment
-- `rollback.yml` - Rollback deploy
-- `migrate.yml` - Run migrations
-- `seed.yml` - Run seeding
+- `playbook-deploy.yml` - Run files deployment
+- `playbook-rollback.yml` - Rollback deploy
+- `playbook-migrate.yml` - Run migrations
+- `playbook-seed.yml` - Run seeding
 
 ```bash
-ansible-playbook deploy.yml -i production -u root
+ansible-playbook playbook-deploy.yml -i production -u root
 ```
