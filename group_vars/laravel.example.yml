@@ -18,6 +18,8 @@ ansistrano_git_branch: master
 ansistrano_before_symlink_shared_tasks_file: "{{ playbook_dir }}/config/before_symlink_shared.yml"
 # Link uploads and run composer install
 ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/config/after_symlink_shared.yml"
+# Clear application cache and optimize code
+ansistrano_before_symlink_tasks_file: "{{ playbook_dir }}/config/before_symlink.yml"
 # Chown all and restart queue
 ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/config/after_symlink.yml"
 

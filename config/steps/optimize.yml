@@ -1,0 +1,5 @@
+---
+
+- name: Optimize code
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ php_path }} artisan clear-compiled && {{ php_path }} artisan optimize
