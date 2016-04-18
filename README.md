@@ -30,3 +30,24 @@ Playbooks:
 ```bash
 ansible-playbook playbook-deploy.yml -i production -u root
 ```
+
+#### Deployment order
+
+1. Init releases directory structure
+1. Update repositody
+1. Export a copy of the repo to a new release directory
+1. Copy .env.example to shared/.env if it was absent
+1. Copy storage to shared/storage if it was absent
+1. Remove local .env & storage from release directory
+1. Create soft links to shared .env & storage
+1. Install composer localy
+1. Run `composer self-update`
+1. Run `composer install`
+1. Clear Laravel cache
+1. Optimize code
+1. Change soflink to new release
+1. Update chown
+1. Install cachetool to clear opcache
+1. Run `cachetool opcache:reset`
+1. Restart Laravel queue
+1. Delete old relases
