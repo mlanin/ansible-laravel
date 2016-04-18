@@ -51,3 +51,5 @@ ansible-playbook playbook-deploy.yml -i production -u root
 1. Run `cachetool opcache:reset`
 1. Restart Laravel queue
 1. Delete old relases
+
+> Attention! Don't forget to update your `shared/.env` file after first deloy!
