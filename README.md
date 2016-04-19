@@ -45,6 +45,8 @@ ansible-playbook playbook-deploy.yml -i production -u root
 1. Run `composer install`
 1. Clear Laravel cache
 1. Optimize code
+1. Run `npm install`
+1. Run `gulp --production`
 1. Change soflink to new release
 1. Update chown
 1. Install cachetool to clear opcache

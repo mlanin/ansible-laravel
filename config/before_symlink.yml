@@ -2,3 +2,4 @@
 
 - include: "{{ playbook_dir }}/config/steps/clear_app_cache.yml"
 - include: "{{ playbook_dir }}/config/steps/optimize.yml"
+- include: "{{ playbook_dir }}/config/steps/gulp.yml"
