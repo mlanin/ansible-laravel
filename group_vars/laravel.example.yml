@@ -29,3 +29,6 @@ php_path: /usr/bin/php
 composer_path: "{{ ansistrano_deploy_to }}/composer.phar"
 composer_options: '--no-dev --optimize-autoloader --no-interaction'
 composer_self_update: true
+
+cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
+cachetool_options: "--fcgi=/var/run/php/php7.0-fpm.sock"
