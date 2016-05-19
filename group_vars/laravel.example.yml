@@ -3,6 +3,8 @@
 # Ansistrano defaults
 ansistrano_allow_anonymous_stats: no
 
+# Debug info
+ansistrano_before_setup_tasks_file: "{{ playbook_dir }}/config/before_setup_tasks.yml"
 # Copy shared files and dirs
 ansistrano_before_symlink_shared_tasks_file: "{{ playbook_dir }}/config/before_symlink_shared.yml"
 # Link uploads and run composer install
@@ -33,6 +35,7 @@ laravel_uploads_public: /public/storage
 
 owner: www-data
 group: www-data
+
 php_path: /usr/bin/php
 
 composer_path: "{{ ansistrano_deploy_to }}/composer.phar"
@@ -42,5 +45,5 @@ composer_self_update: true
 cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
 cachetool_options: "--fcgi=/var/run/php/php7.0-fpm.sock"
 
-run_gulp: false
+run_gulp: true
 npm_path: /usr/bin/npm

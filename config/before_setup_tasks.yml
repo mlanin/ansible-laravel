@@ -1,0 +1,3 @@
+---
+
+- debug: msg="Start deploy from {{ ansistrano_git_repo }} to {{ ansistrano_deploy_to }}"
