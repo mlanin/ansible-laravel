@@ -1,18 +1,7 @@
 ---
 
-ansistrano_deploy_to: /var/www/laravel # Update to your deploy path
-ansistrano_version_dir: releases
-ansistrano_current_dir: current
-ansistrano_shared_paths:
-  - .env
-  - storage
-
-ansistrano_keep_releases: 5
-ansistrano_deploy_via: git
+# Ansistrano defaults
 ansistrano_allow_anonymous_stats: no
-
-ansistrano_git_repo: git@github.com:foo/bar.git # Update to your git repo
-ansistrano_git_branch: master
 
 # Copy shared files and dirs
 ansistrano_before_symlink_shared_tasks_file: "{{ playbook_dir }}/config/before_symlink_shared.yml"
@@ -23,9 +12,29 @@ ansistrano_before_symlink_tasks_file: "{{ playbook_dir }}/config/before_symlink.
 # Chown all and restart queue
 ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/config/after_symlink.yml"
 
+# Repository info
+ansistrano_deploy_via: git
+ansistrano_git_repo: git@github.com:foo/bar.git # Update to your git repo
+ansistrano_git_branch: master
+
+# Deployment params
+ansistrano_keep_releases: 5
+ansistrano_deploy_to: /var/www/laravel # Update to your deploy path
+ansistrano_version_dir: releases
+ansistrano_current_dir: current
+ansistrano_shared_paths:
+  - .env
+  - storage
+
+# Where uploads are stored. Set to false if don't use uploads
+laravel_uploads_storage: /storage/app/public
+# Where to link them for public
+laravel_uploads_public: /public/storage
+
 owner: www-data
 group: www-data
 php_path: /usr/bin/php
+
 composer_path: "{{ ansistrano_deploy_to }}/composer.phar"
 composer_options: '--no-dev --optimize-autoloader --no-interaction'
 composer_self_update: true
@@ -33,4 +42,5 @@ composer_self_update: true
 cachetool_path: "{{ ansistrano_deploy_to }}/cachetool.phar"
 cachetool_options: "--fcgi=/var/run/php/php7.0-fpm.sock"
 
+run_gulp: false
 npm_path: /usr/bin/npm

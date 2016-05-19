@@ -3,5 +3,6 @@
 - name: Link storage/public to public/storage
   file:
     state: link
-    path: "{{ ansistrano_release_path.stdout }}/public/storage"
-    src: "{{ ansistrano_shared_path.stdout }}/storage/app/public"
+    src: "{{ ansistrano_shared_path.stdout }}{{ laravel_uploads_storage }}"
+    path: "{{ ansistrano_release_path.stdout }}{{ laravel_uploads_public }}"
+  when: laravel_uploads_storage != false

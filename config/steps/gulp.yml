@@ -3,7 +3,9 @@
 - name: Run npm install
   shell: chdir={{ ansistrano_release_path.stdout }}
     {{ npm_path }} install
+  when: run_gulp
 
 - name: Run gulp
   shell: chdir={{ ansistrano_release_path.stdout }}
     ./node_modules/.bin/gulp --production
+  when: run_gulp

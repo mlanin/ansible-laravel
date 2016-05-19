@@ -5,8 +5,8 @@
 
 - name: Copy .env.example
   copy:
-    src: "{{ ansistrano_shared_path.stdout }}/.env.example"
-    dest: "{{ ansistrano_release_path.stdout }}/.env"
+    src: "{{ ansistrano_release_path.stdout }}/.env.example"
+    dest: "{{ ansistrano_shared_path.stdout }}/.env"
     remote_src: True
   when: env_file.stat.exists == False
 

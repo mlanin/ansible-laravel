@@ -48,6 +48,8 @@ Is Ansistrano ready to be used? Here are some companies currently using it:
 * [Nice&Crazy](http://www.niceandcrazy.com)
 * [Gstock](http://www.g-stock.es)
 * [CMP Group](http://www.teamcmp.com)
+* [Jolicode](http://jolicode.com/)
+* [Wavecontrol](http://monitoring.wavecontrol.com/ca/public/demo/)
 
 If you are also using it, please let us know via a PR to this document.
 
@@ -82,7 +84,7 @@ Features
 * Rollback in seconds (with ansistrano.rollback role)
 * Customize your deployment with hooks before and after critical steps
 * Save disk space keeping a maximum fixed releases in your hosts
-* Choose between SCP (push), RSYNC (push), GIT (pull) or S3 (get) deployment strategies
+* Choose between SCP (push), RSYNC (push), GIT (pull), Download (HTTP Get) or S3 (get) deployment strategies
 
 Main workflow
 -------------
@@ -393,6 +395,7 @@ quepimquepam.com           : ok=14   changed=10   unreachable=0    failed=0
 They're talking about us
 ------------------------
 
+* [http://alexmoreno.net/ansistrano-deploying-drupal-ansible](http://alexmoreno.net/ansistrano-deploying-drupal-ansible)
 * [http://www.ricardclau.com/2015/10/deploying-php-applications-with-ansistrano/](http://www.ricardclau.com/2015/10/deploying-php-applications-with-ansistrano/)
 * [http://es.slideshare.net/OrestesCA/ansible-intro-ansible-barcelona-user-group-june-2015](http://es.slideshare.net/OrestesCA/ansible-intro-ansible-barcelona-user-group-june-2015)
 * [http://carlosbuenosvinos.com/deploying-symfony-and-php-apps-with-ansistrano/](http://carlosbuenosvinos.com/deploying-symfony-and-php-apps-with-ansistrano/)
