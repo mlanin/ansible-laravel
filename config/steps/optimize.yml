@@ -9,3 +9,9 @@
   shell: chdir={{ ansistrano_release_path.stdout }}
     {{ php_path }} artisan clear-compiled && {{ php_path }} artisan optimize
   when: artisan_commands.stdout.find('optimize') != -1
+
+- name: Cache routes
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    {{ php_path }} artisan route:cache
+  when: artisan_commands.stdout.find('route:cache') != -1
+  ignore_errors: yes
